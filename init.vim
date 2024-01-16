@@ -41,6 +41,7 @@ Plug 'lervag/vimtex'
 " Plug show 
 
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Coc
 
