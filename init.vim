@@ -42,6 +42,9 @@ Plug 'lervag/vimtex'
 
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" color 
+Plug 'connorholyday/vim-snazzy'
+Plug 'vim-airline/vim-airline'
 
 " Coc
 
@@ -112,7 +115,8 @@ let g:vmt_fence_closing_text = '/TOC'
 
 
 
-
+let g:SnazzyTransparent = 1
+color snazzy
 "===================== vimtex =======================
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
