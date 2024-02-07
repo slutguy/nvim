@@ -14,11 +14,19 @@ map el :+tabnext<CR>
 
 map mt :edit ~/Documents/2B2T/T-markdown/master.md<CR>
 " ==================== Settings ===========================
-
+map zm :set spell!<CR>
 set number
 set relativenumber
 set cursorline
 set showcmd
+set scrolloff=5
+set foldmethod=indent
+let &t_ut=''
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+vnoremap Y "+y
 "autocmd BufWrite * mkview
 "autocmd BufWinLeave * mkview
 "autocmd BufRead * silent loadview
@@ -42,9 +50,19 @@ Plug 'lervag/vimtex'
 
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+" vim-indent-guides
+Plug 'preservim/vim-indent-guides'
+
 " color 
+Plug 'altercation/vim-colors-solarized'
 Plug 'connorholyday/vim-snazzy'
+Plug 'nordtheme/vim'
 Plug 'vim-airline/vim-airline'
+
+" tabline
+Plug 'mkitt/tabline.vim'
+
 
 " Coc
 
@@ -114,9 +132,12 @@ let g:vmt_fence_closing_text = '/TOC'
 
 
 
+" ==================== colors =======================
+ syntax enable
+ colorscheme nord
+" let g:solarized_termcolors=256
+ hi Normal guibg=NONE ctermbg=NONE
 
-let g:SnazzyTransparent = 1
-color snazzy
 "===================== vimtex =======================
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -126,3 +147,11 @@ let g:vimtex_quickfix_mode=0
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_engine = 'xelatex'
 autocmd Filetype tex setl updatetime=3
+"====================== indent-guides ================
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 1
+silent! unmap <LEADER>ig
+autocmd WinEnter * silent! unmap <LEADER>ig
+
