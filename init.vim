@@ -72,7 +72,7 @@ call plug#end()
 
 set re=0
 "===================== Coc ==========================
-let g:coc_global_extensions = ['coc-json', 'coc-python', 'coc-vimlsp', 'coc-highlight', 'coc-tsserver', 'coc-phpls' ]
+let g:coc_global_extensions = ['coc-json', 'coc-python', 'coc-vimlsp', 'coc-highlight', 'coc-tsserver', 'coc-phpls', 'coc-go', 'coc-clangd']
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 set shortmess+=c
