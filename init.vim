@@ -135,6 +135,7 @@ let g:vmt_fence_closing_text = '/TOC'
 " ==================== colors =======================
  syntax enable
  colorscheme nord
+ hi comment ctermfg=3
 " let g:solarized_termcolors=256
  hi Normal guibg=NONE ctermbg=NONE
 
