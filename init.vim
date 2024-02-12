@@ -138,7 +138,8 @@ let g:vmt_fence_closing_text = '/TOC'
  hi comment ctermfg=212
 " let g:solarized_termcolors=256
  hi Normal guibg=NONE ctermbg=NONE
-
+" ====================line
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 "===================== vimtex =======================
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
